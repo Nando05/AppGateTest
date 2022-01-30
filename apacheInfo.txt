@@ -1,0 +1,43 @@
+Apache Info:
+terraform@terraform-virtualbox:~$ service apache2 status
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-01-30 11:02:37 -05; 36min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 1812 (apache2)
+      Tasks: 55 (limit: 3441)
+     Memory: 5.0M
+     CGroup: /system.slice/apache2.service
+             ├─1812 /usr/sbin/apache2 -k start
+             ├─1818 /usr/sbin/apache2 -k start
+             └─1819 /usr/sbin/apache2 -k start
+
+ene 30 11:02:37 terraform-virtualbox systemd[1]: Starting The Apache HTTP Server...
+ene 30 11:02:37 terraform-virtualbox apachectl[1811]: AH00558: apache2: Could not reliably determine the server's fully >
+ene 30 11:02:37 terraform-virtualbox systemd[1]: Started The Apache HTTP Server.
+terraform@terraform-virtualbox:~$ ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:55:a2:e8:db  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.19  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::5c9a:6c25:2d13:b8fa  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:dc:67:37  txqueuelen 1000  (Ethernet)
+        RX packets 223972  bytes 44784004 (44.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 345006  bytes 437607634 (437.6 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 144  bytes 11928 (11.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 144  bytes 11928 (11.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
